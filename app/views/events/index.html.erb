@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenue sur notre site d'événements</h1>
+  <p class="lead">Voici la liste des événements disponibles :</p>
+  <hr class="my-4">
+  <% @events.each do |event| %>
+    <h2><%= link_to event.title, event_path(event) %></h2>
+    <p><%= event.description %></p>
+  <% end %>
+  <%= link_to 'Créer un événement', new_event_path, class: 'btn btn-primary btn-lg' %>
+</div>

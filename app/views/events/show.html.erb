@@ -1,0 +1,8 @@
+<h1><%= @event.title %></h1>
+<p><%= @event.description %></p>
+<p>Date de début : <%= @event.start_date %></p>
+<p>Durée : <%= @event.duration %> minutes</p>
+<p>Prix : <%= @event.price %> €</p>
+<p>Lieu : <%= @event.location %></p>
+<p>Créateur : <%= @event.user.email %></p>
+<p>Nombre d'inscrits : <%= @event.attendees.count %></p>
