@@ -1,0 +1,9 @@
+<h1>Liste des invités pour <%= @event.name %></h1>
+
+<ul>
+  <% @attendances.each do |attendance| %>
+    <li><%= attendance.user.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Éditer l\'événement', edit_event_path(@event) %>

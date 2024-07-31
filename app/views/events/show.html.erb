@@ -6,3 +6,18 @@
 <p>Lieu : <%= @event.location %></p>
 <p>Créateur : <%= @event.user.email %></p>
 <p>Nombre d'inscrits : <%= @event.attendees.count %></p>
+<% if user_signed_in? && !@event.participants.include?(current_user) && @event.admin != current_user %>
+  <%= link_to 'Rejoindre l\'événement', new_event_attendance_path(@event) %>
+<% end %>
+
+<% if user_signed_in? && @event.admin == current_user %>
+  <%= link_to 'Mon espace événement', event_attendances_path(@event) %>
+<% end %>
+
+<% if user_signed_in? && !@event.participants.include?(current_user) && @event.admin != current_user %>
+  <% if @event.is_free? %>
+    <%= link_to 'Rejoindre l\'événement', event_attendances_path(@event), method: :post %>
+  <% else %>
+    <%= link_to 'Rejoindre l\'événement', new_event_attendance_path(@event) %>
+  <% end %>
+<% end %>

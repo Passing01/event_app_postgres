@@ -1,0 +1,14 @@
+<h1><%= @user.email %></h1>
+<p>Prénom: <%= @user.first_name %></p>
+<p>Nom: <%= @user.last_name %></p>
+<p>Description: <%= @user.description %></p>
+<p>Email: <%= @user.email %></p>
+
+<h2>Événements créés</h2>
+<ul>
+  <% @user.events.each do |event| %>
+    <li><%= link_to event.title, event_path(event) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Éditer le profil', edit_user_registration_path %>

@@ -25,6 +25,8 @@ gem 'devise'
 gem 'bootstrap', '~> 5.1.3'
 gem 'pg', '~> 1.1'
 gem 'rails_12factor'
+gem 'stripe'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
