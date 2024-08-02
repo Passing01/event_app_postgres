@@ -1,0 +1,17 @@
+<h1>Admin::Users#show</h1>
+<p>Find me in app/views/admin/users/show.html.erb</p>
+<h1>Détails de l'utilisateur</h1>
+<p>
+  <strong>Nom:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin ? 'Oui' : 'Non' %>
+</p>
+<%= link_to 'Modifier', edit_admin_user_path(@user) %> |
+<%= link_to 'Retour', admin_users_path %>

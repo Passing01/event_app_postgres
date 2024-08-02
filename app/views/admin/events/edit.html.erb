@@ -1,0 +1,46 @@
+<h1>Admin::Events#edit</h1>
+<p>Find me in app/views/admin/events/edit.html.erb</p>
+<h1>Modifier l'événement</h1>
+<%= form_with(model: [:admin, @event], local: true) do |form| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :validated %>
+    <%= form.check_box :validated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reviewed %>
+    <%= form.check_box :reviewed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Retour', admin_events_path %>
